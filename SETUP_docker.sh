@@ -5,6 +5,9 @@ apt-get update && apt-get install -y --no-install-recommends \
   ca-certificates \
   git \
   openjdk-11-jre \
+  r-base-core \
+  libminizip1 \
+  libxcb-xinerama0 \
   procps && \
   apt-get autoclean
 
@@ -19,7 +22,7 @@ curl -fsSL https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -
 # install WDL engine
 conda install -c conda-forge miniwdl
 
-# Test  WDL engine
+# Test  WDL engine NOTE: need to restart aftering changing docker permissions.
 # miniwdl run_self_test
 
 # Download viral-ngs repo
@@ -55,7 +58,7 @@ wget https://mafft.cbrc.jp/alignment/software/mafft_${MAFFT_VER}-1_amd64.deb && 
   rm mafft_${MAFFT_VER}-1_amd64.deb
 
 # IQ-TREE TODO: Add to path
-IQTREE_VER="2.2.0.1"
+IQTREE_VER="2.2.0"
 wget https://github.com/iqtree/iqtree2/releases/download/v${IQTREE_VER}/iqtree-${IQTREE_VER}-Linux.tar.gz && \
   tar -xzvf iqtree-${IQTREE_VER}-Linux.tar.gz && \
   rm -v iqtree-${IQTREE_VER}-Linux.tar.gz

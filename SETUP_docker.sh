@@ -30,7 +30,7 @@ conda install -c conda-forge miniwdl
 wget -nv -O - https://github.com/broadinstitute/viral-pipelines/archive/refs/tags/v2.1.33.9.tar.gz | tar zx && \
   mv viral-pipelines-*/pipes/WDL/workflows/* pipeline/
 
-# Install the remaining programs into pipeline.
+# Install the remaining programs into software.
 cd pipeline/
 
 # Download RStudio

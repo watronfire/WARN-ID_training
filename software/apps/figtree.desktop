@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=FigTree
+Comment=Application to view phylogenetic trees
+Exec=java -jar /home/SeqLaptop/sequencing/software/FigTree_v1.4.4/lib/figtree.jar
+Icon=/home/SeqLaptop/sequencing/software/FigTree_v1.4.4/images/figtree.png
+Terminal=false
+StartupWMClass=figtree-application-FigTreeApplication
+Type=Application
+X-Desktop-File-Install-Version=0.24

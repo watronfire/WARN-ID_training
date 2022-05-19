@@ -31,7 +31,7 @@ wget -nv -O - https://github.com/broadinstitute/viral-pipelines/archive/refs/tag
   mv viral-pipelines-*/pipes/WDL/workflows/* pipeline/
 
 # Install the remaining programs into software.
-cd pipeline/
+cd software/
 
 # Download RStudio
 RSTUDIO_VER="2022.02.1-461"
@@ -86,10 +86,27 @@ wget https://github.com/rambaut/figtree/releases/download/v${FIGTREE_VER}/FigTre
 
 # IGV
 IGV_VER="2.12"
-wget https://data.broadinstitute.org/igv/projects/downloads/${IGV_VER}/IGV_${IGV_VER}.3.zip
+wget https://data.broadinstitute.org/igv/projects/downloads/${IGV_VER}/IGV_${IGV_VER}.3.zip && \
+  unzip IGV_${IGV_VER}.3.zip
 
+
+# AliView
+ALIVIEW_VER="1.28"
+wget https://ormbunkar.se/aliview/downloads/linux/linux-version-${ALIVIEW_VER}/aliview.install.run && \
+  chmod +x aliview.install.run && \
+  sudo ./aliview.install.run
 
 # Cleanup
 rm get-docker.sh anaconda.sh
+rm aliview.install.run
 rm -r viral-pipelines-*
 
+# TODO Move desktop files to appropriate locations
+
+# Remove conda base name
+cd ~/anaconda3/etc/ && \
+  mkdir conda && \
+  cd conda/ && \
+  mkdir activate.d && \
+  cd activate.d && \
+  mv ~/sequencing/remove_base_ps1.sh .

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=UGENE
+Comment=Bioinformatics toolkit
+Exec=/home/SeqLaptop/sequencing/software/ugene-42.0/ugene -ui
+Icon=/home/SeqLaptop/sequencing/software/ugene-42.0/ugene.png
+Terminal=false
+StartupWMClass=Main
+Type=Application
+X-Desktop-File-Install-Version=0.24
